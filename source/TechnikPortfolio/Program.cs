@@ -1,7 +1,9 @@
-﻿namespace TechnikPortfolio
+﻿using System.Collections.Generic;
+using TechnikPortfolio.TechRadar;
+
+namespace TechnikPortfolio
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Diagnostics;
     using System.Linq;
@@ -142,6 +144,12 @@
             Console.WriteLine("running dot.exe");
 
             RunDotExecutable();
+
+
+            Console.WriteLine("Generating radars");
+            var radarGenerator = new RadarGenerator();
+
+            radarGenerator.GenerateRadar("bbv Technik Portfolio", filteredIssues);
 
             Console.WriteLine("finished");
         }
